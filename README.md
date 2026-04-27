@@ -313,9 +313,13 @@ Before making changes, read the documentation and keep code, patterns and docs c
 
 ### License
 
-This project is intended as a production-grade frontend template.
+This repository is **not open-source**.
 
-Adapt and distribute under the terms appropriate for your organization.
+The code is publicly available for portfolio, educational review and professional evaluation purposes only.
+
+Use, copying, modification, distribution, sublicensing, deployment or derivative works are not permitted without explicit written permission from the author.
+
+See [LICENSE](LICENSE) for details.
 
 ---
 
@@ -628,6 +632,10 @@ Antes de fazer alterações, leia a documentação e mantenha código, padrões 
 
 ### Licença
 
-Este projeto é pensado como um template frontend production-grade.
+Este repositório **não é open-source**.
 
-Adapte e distribua conforme os termos apropriados para sua organização.
+O código está disponível publicamente apenas para fins de portfólio, avaliação educacional e avaliação profissional.
+
+O uso, cópia, modificação, distribuição, sublicenciamento, implantação ou criação de trabalhos derivados não são permitidos sem autorização expressa por escrito do autor.
+
+Veja [LICENSE](LICENSE) para mais detalhes.
