@@ -1,0 +1,57 @@
+<div class="sticky-actions">
+  <!-- Actions Card -->
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-header border-bottom py-3 px-4">
+      <h5 class="card-title mb-0 text-heading">Ações</h5>
+    </div>
+    <div class="card-body p-4">
+      <div class="d-grid gap-3">
+        <app-submit [text]="submitLabel" [inLoad]="isLoading" [disabled]="isSubmitDisabled"
+          submitClass="btn btn-primary w-100 waves-effect waves-light" (click)="onSubmit()">
+        </app-submit>
+        <button type="button" class="btn btn-label-secondary w-100 waves-effect" [routerLink]="cancelUrl">
+          {{ cancelLabel }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tips & Info Card -->
+  <div class="card border-0 shadow-sm">
+    <div class="card-header border-bottom py-3 px-4">
+      <h5 class="card-title mb-0 text-heading">Dicas e Informações</h5>
+    </div>
+    <div class="card-body p-4">
+      <!-- Tips Loop -->
+      @for (tip of tips; track tip.description; let last = $last) {
+      <div class="d-flex align-items-start gap-3" [class.mb-3]="!last || info.length > 0">
+        <div class="avatar avatar-sm flex-shrink-0">
+          <span class="avatar-initial rounded" [ngClass]="'bg-label-' + (tip.type || 'primary')">
+            <i [class]="tip.icon"></i>
+          </span>
+        </div>
+        <div>
+          <p class="mb-0 small text-heading" [innerHTML]="tip.description"></p>
+        </div>
+      </div>
+      }
+
+      <!-- Metadata Loop -->
+      @if (info.length > 0) {
+      <hr class="my-4">
+      <div class="d-flex flex-column gap-2">
+        @for (item of info; track item.label) {
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="text-muted x-small">{{ item.label }}:</span>
+          @if (item.isBadge) {
+          <span class="badge" [ngClass]="item.badgeClass || 'bg-label-primary'">{{ item.value }}</span>
+          } @else {
+          <span class="text-muted x-small fw-bold" [ngClass]="item.valueClass">{{ item.value }}</span>
+          }
+        </div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+</div>

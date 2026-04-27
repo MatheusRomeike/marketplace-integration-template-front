@@ -1,0 +1,41 @@
+.app-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.85;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: -0.8px;
+  align-items: flex-start;
+  justify-content: center;
+  height: 48px;
+
+  .brand-word-1 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #435971; // Theme palette color
+    text-transform: uppercase;
+  }
+
+  .brand-word-2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #697a8d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: -0px;
+  }
+
+  &.text-white {
+
+    .brand-word-1,
+    .brand-word-2 {
+      color: #fff !important;
+    }
+  }
+}
+
+// Hover effect suave
+:host:hover {
+  .app-brand-text {
+    transform: translateX(2px);
+  }
+}

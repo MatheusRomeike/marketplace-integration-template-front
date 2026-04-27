@@ -1,0 +1,21 @@
+<div class="card-header border-0 d-flex flex-wrap justify-content-between align-items-center pb-4 pt-1 px-0 bg-transparent">
+    <div class="d-flex flex-column me-2">
+        <h5 class="mb-1 fw-bold text-heading d-flex align-items-center mb-0">
+            <i class="bx me-2 fs-3" 
+               [ngClass]="icon" 
+               [class]="'text-' + colorClass"></i>
+            {{ title }}
+        </h5>
+        <div class="ms-4 ps-1">
+            <p class="text-muted small mb-0" *ngIf="description">{{ description }}</p>
+        </div>
+    </div>
+    <div class="d-flex align-items-center mt-3 mt-sm-0" *ngIf="btnLabel">
+        <button type="button" class="btn d-flex align-items-center px-4" 
+                [ngClass]="btnClass" 
+                (click)="onBtnClick()">
+            <i class="bx me-1 fs-4" [ngClass]="btnIcon"></i>
+            {{ btnLabel }}
+        </button>
+    </div>
+</div>

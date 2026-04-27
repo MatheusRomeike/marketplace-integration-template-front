@@ -1,0 +1,54 @@
+<div
+    class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 animate__animated animate__fadeIn">
+    <div class="mb-3 mb-md-0">
+        <!-- Breadcrumbs -->
+        <nav *ngIf="breadcrumbs && breadcrumbs.length > 0" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-style1 mb-1">
+                @for (crumb of breadcrumbs; track crumb.label; let last = $last) {
+                <li class="breadcrumb-item" [class.active]="crumb.active || last"
+                    [attr.aria-current]="(crumb.active || last) ? 'page' : null">
+                    @if (!crumb.active && !last && crumb.url) {
+                    <a [routerLink]="crumb.url">{{ crumb.label }}</a>
+                    } @else {
+                    <span>{{ crumb.label }}</span>
+                    }
+                </li>
+                }
+            </ol>
+        </nav>
+
+        <!-- Title & Subtitle -->
+        <h3 class="mb-1 fw-bold text-heading">{{ title }}</h3>
+        <p *ngIf="subtitle" class="text-muted mb-0">
+            {{ subtitle }}
+        </p>
+    </div>
+
+    <div class="d-flex gap-2 align-self-end align-self-md-center">
+        <!-- Back Button -->
+        <button *ngIf="showBack" type="button" class="btn btn-label-secondary d-flex align-items-center px-4"
+            [routerLink]="backUrl">
+            <i class="bx bx-left-arrow-alt me-1"></i>
+            {{ backLabel }}
+        </button>
+
+        <!-- Action Button (Save/Submit or Add) -->
+        <ng-container *ngIf="showSave">
+            <!-- Link mode (e.g. for Index pages "New") -->
+            <button *ngIf="saveUrl" type="button" class="btn btn-primary d-flex align-items-center px-4 shadow-sm"
+                [routerLink]="saveUrl" [disabled]="isSaveDisabled">
+                <i class="{{ saveIcon }} me-2"></i>
+                {{ saveLabel }}
+            </button>
+
+            <!-- Event mode (e.g. for forms) -->
+            <button *ngIf="!saveUrl" type="button" class="btn btn-primary d-flex align-items-center px-4 shadow-sm"
+                (click)="onSave()" [disabled]="isLoading || isSaveDisabled">
+                <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2" role="status"
+                    aria-hidden="true"></span>
+                <i class="bx {{ saveIcon }} me-2" *ngIf="!isLoading"></i>
+                {{ saveLabel }}
+            </button>
+        </ng-container>
+    </div>
+</div>

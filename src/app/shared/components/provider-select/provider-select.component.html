@@ -1,0 +1,40 @@
+<div class="mb-3">
+  @if (label) {
+  <label class="form-label" [class.text-danger]="isInvalid">
+    {{ label }} @if (required) { <span class="text-danger">*</span> }
+  </label>
+  }
+
+  <ng-select
+    [items]="providers"
+    bindLabel="name"
+    bindValue="id"
+    [placeholder]="placeholder"
+    [clearable]="false"
+    [readonly]="isDisabled"
+    [class.is-invalid]="isInvalid"
+    [(ngModel)]="value"
+    (ngModelChange)="onModelChange($event)"
+    (blur)="onTouched()"
+  >
+    <ng-template ng-label-tmp let-item="item">
+      <div class="d-flex align-items-center gap-2">
+        <app-avatar [url]="item.logo" [nome]="item.name" size="avatar-xs"></app-avatar>
+        <span class="text-truncate fw-medium">{{ item.name }}</span>
+      </div>
+    </ng-template>
+
+    <ng-template ng-option-tmp let-item="item">
+      <div class="d-flex align-items-center gap-3 py-1">
+        <app-avatar [url]="item.logo" [nome]="item.name" size="avatar-sm"></app-avatar>
+        <span class="fw-medium text-heading text-truncate">{{ item.name }}</span>
+      </div>
+    </ng-template>
+  </ng-select>
+
+  @if (isInvalid) {
+  <div class="invalid-feedback d-block animate__animated animate__fadeIn">
+    Selecione um provedor
+  </div>
+  }
+</div>

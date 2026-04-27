@@ -1,0 +1,42 @@
+<div class="container-xxl container-p-y">
+  <div class="misc-wrapper text-center">
+
+    <div class="card px-3 py-4">
+      <div class="card-body">
+
+        <!-- Icon -->
+        <i class="ti ti-lock text-danger mb-3" style="font-size: 3.5rem;"></i>
+
+        <!-- Title -->
+        <h4 class="mb-2 fw-semibold">
+          Acesso negado
+        </h4>
+
+        <!-- Description -->
+        <p class="mb-4">
+          Você não tem permissão para acessar esta página.<br>
+          <span class="text-muted">
+            Caso ache que isso é um erro, entre em contato com o administrador Integration.
+          </span>
+        </p>
+
+        <!-- Illustration -->
+        <img src="assets/images/illustrations/access_denied.svg" alt="Acesso negado" class="img-fluid misc-object mb-4"
+          width="280" />
+
+        <!-- Actions -->
+        <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+
+          <app-submit text="Ir para o Dashboard" submitClass="btn btn-primary" (click)="goHome()">
+          </app-submit>
+
+          <app-submit text="Sair" submitClass="btn btn-label-secondary" (click)="logout()">
+          </app-submit>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

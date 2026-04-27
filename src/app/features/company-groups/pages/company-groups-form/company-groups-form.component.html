@@ -1,0 +1,54 @@
+<app-page-header [title]="isEdit ? 'Editar Grupo de Empresa' : 'Novo Grupo de Empresa'"
+  [subtitle]="isEdit ? 'Gerencie as informações básicas do grupo' : 'Preencha os dados abaixo para cadastrar um novo grupo'"
+  backUrl="/grupos-empresas" [showSave]="true" [saveLabel]="isEdit ? 'Atualizar Dados' : 'Criar Grupo'"
+  saveIcon="ti ti-check" [isLoading]="isLoading" [breadcrumbs]="breadcrumbs" (save)="save()">
+</app-page-header>
+
+<div class="row animate__animated animate__fadeIn">
+  <!-- Main Content Column -->
+  <div class="col-12 col-lg-8">
+    <div *appLoadingCard="isLoading" class="card shadow-none border-0 mb-4">
+      <div class="card-header d-flex align-items-center justify-content-between border-bottom py-3 px-4">
+        <div class="d-flex align-items-center">
+          <i class="ti ti-building-factory-2 ti-md me-2 text-primary"></i>
+          <h5 class="card-title mb-0 fw-bold text-heading">Informações do Grupo</h5>
+        </div>
+      </div>
+      <div class="card-body pt-4 px-4 pb-4">
+        <form [formGroup]="form" (ngSubmit)="save()">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label class="form-label" for="name">Nome do Grupo <span class="text-danger">*</span></label>
+                <input type="text" id="name" class="form-control" formControlName="name"
+                  placeholder="Ex: Grupo Mercado Livre" />
+              @if (form.get('name')?.invalid && form.get('name')?.touched) {
+              <div class="invalid-feedback animate__animated animate__fadeIn">
+                O nome do grupo é obrigatório (mín. 3 caracteres)
+              </div>
+              }
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="externalId">Identificador Externo <span
+                  class="text-danger">*</span></label>
+                <input type="text" id="externalId" class="form-control" formControlName="externalId"
+                  placeholder="Ex: GRUPO_ML_01" />
+              @if (form.get('externalId')?.invalid && form.get('externalId')?.touched) {
+              <div class="invalid-feedback animate__animated animate__fadeIn">
+                O identificador externo é obrigatório
+              </div>
+              }
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions & Info Column (Sticky Sidebar) -->
+  <div class="col-12 col-lg-4">
+    <app-form-sidebar [cancelUrl]="'/grupos-empresas'" [isLoading]="isLoading" [tips]="tips" [info]="info"
+      (submit)="save()">
+    </app-form-sidebar>
+  </div>
+</div>

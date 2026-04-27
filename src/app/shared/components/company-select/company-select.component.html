@@ -1,0 +1,29 @@
+<ng-select [items]="companies" bindValue="id" bindLabel="name" [hideSelected]="true" [clearable]="false"
+  [disabled]="companies.length <= 1" placeholder="Selecione a empresa" typeToSearchText="Digite para pesquisar..."
+  notFoundText="Empresa não encontrada." [(ngModel)]="value" (ngModelChange)="changeCompany()">
+  <ng-template ng-label-tmp let-item="item">
+    <span class="ng-value-label">
+      @if (item) {
+      <div class="d-flex align-items-center justify-content-start" [title]="item.name">
+        <div class="me-2" style="width: 26px">
+          <app-avatar size="avatar-xs" [nome]="item.name"></app-avatar>
+        </div>
+        <span class="text-truncate text-secondary" style="width: 140px">
+          {{ item.name }}
+        </span>
+      </div>
+      }
+    </span>
+  </ng-template>
+
+  <ng-template ng-option-tmp let-item="item">
+    <div class="d-flex align-items-center justify-content-start">
+      <div class="me-2" style="width: 26px">
+        <app-avatar size="avatar-xs" [nome]="item.name"></app-avatar>
+      </div>
+      <div class="text-secondary text-truncate" style="width: 140px">
+        {{ item.name }}
+      </div>
+    </div>
+  </ng-template>
+</ng-select>

@@ -1,0 +1,15 @@
+<button type="button" [ngClass]="submitClass" [disabled]="disabled || inLoad">
+  @if (inLoad) {
+  <span>
+    <span class="spinner-border me-1" role="status" aria-hidden="true"></span>
+    Aguarde...
+  </span>
+  } @else {
+  <span>
+    @if(icon) {
+    <i class="me-2" [ngClass]="icon"></i>
+    }
+    {{ text }}
+  </span>
+  }
+</button>

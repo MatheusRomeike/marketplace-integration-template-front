@@ -1,0 +1,16 @@
+<div class="avatar" [ngClass]="[size, status ? 'avatar-' + status : '']">
+  @if (url) {
+  <img
+    [src]="url"
+    alt="Avatar"
+    class="{{ circle ? 'rounded-circle' : 'rounded' }}"
+    [ngClass]="avatarClass"
+  />
+  } @else {
+  <span
+    class="avatar-initial {{ circle ? 'rounded-circle' : 'rounded' }}"
+    [ngClass]="colorAvatar()"
+    >{{ avatarDefault() }}</span
+  >
+  }
+</div>

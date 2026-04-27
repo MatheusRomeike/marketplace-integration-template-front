@@ -1,0 +1,46 @@
+<aside #asideElement id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme"
+  (mouseenter)="layoutService.menuEnter()" (mouseleave)="layoutService.menuLeave()">
+  <div class="app-brand demo px-3 overflow-visible">
+    <div class="cursor-pointer d-flex align-items-center w-100" (click)="layoutService.menuToggle()">
+      <app-logo [showText]="!layoutService.menuCollapsed || layoutService.menuHover"></app-logo>
+    </div>
+
+    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none"
+      (click)="layoutService.menuToggle()">
+      <i class="ti ti-x ti-sm"></i>
+    </a>
+  </div>
+
+  <!-- MÚLTIPLOS CONTEXTOS -->
+  <div class="px-3 my-2">
+    <app-company-select></app-company-select>
+  </div>
+
+  <div class="menu-inner-shadow"></div>
+
+  <ul id="menu-sistem" class="menu-inner py-1">
+    @for (section of menuItems; track section.title; let firstSection = $first) {
+    @if (section.title) {
+    <li class="menu-header small menu-section-header" [class.menu-section-header-spaced]="!firstSection">
+      <span class="menu-header-text d-flex align-items-center gap-2">
+        @if (section.icon) {
+        <i class="menu-section-icon" [ngClass]="section.icon"></i>
+        }
+        <span class="menu-section-title">{{ section.title }}</span>
+      </span>
+    </li>
+    }
+
+    @for (item of section.items; track item.url) {
+    <li class="menu-item" [routerLink]="[item.url]" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">
+      <a href="javascript:void(0);" class="menu-link">
+        <i class="menu-icon tf-icons" [ngClass]="item.icon"></i>
+        <div class="text-truncate">{{ item.title }}</div>
+      </a>
+    </li>
+    }
+    }
+  </ul>
+
+</aside>

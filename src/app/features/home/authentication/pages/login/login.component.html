@@ -1,0 +1,40 @@
+<div class="authentication-wrapper authentication-cover">
+  <div class="authentication-inner row m-0">
+    <!-- Left Text -->
+    <div class="d-none d-lg-flex col-lg-7 col-xl-8 p-0">
+      <app-banner class="w-100 h-100"></app-banner>
+    </div>
+
+    <!-- Login -->
+    <div
+      class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-5 p-4 animate__animated animate__fadeIn">
+      <div class="w-px-400 mx-auto mb-5">
+        @if (authenticated) {
+        <div class="text-center animate__animated animate__fadeIn">
+          <div class="avatar avatar-xl mb-3 mx-auto">
+            <span class="avatar-initial rounded-circle bg-label-primary">
+              <i class="bx bx-user fs-1"></i> </span>
+          </div>
+          <h4 class="mb-2 fw-semibold">Bem-vindo de volta, {{ userName }}!</h4>
+          <p class="mb-4">Sua sessão já está ativa e pronta para uso.</p>
+          <app-submit text="Acessar Dashboard" submitClass="btn btn-primary d-grid w-100 shadow-sm" (click)="login()">
+          </app-submit>
+        </div>
+        } @else {
+        <div class="animate__animated animate__fadeIn">
+          <h4>Bem-vindo de volta</h4>
+          <p>Acesse sua conta para continuar</p>
+          <app-submit text="Entrar" submitClass="btn btn-primary d-grid w-100 shadow-sm" (click)="login()">
+          </app-submit>
+        </div>
+        }
+        <p class="text-center mt-4">
+          <span>Novo por aqui?</span>
+          <a href="https://Integration.com.br">
+            <span class="ms-1">Entre em contato</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.misc-wrapper {
+    min-height: calc(100vh - 3rem); // respeita header/layout
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.misc-object {
+    max-width: 100%;
+}

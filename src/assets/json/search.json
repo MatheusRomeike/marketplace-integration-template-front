@@ -1,0 +1,54 @@
+{
+  "sections": [
+    {
+      "title": "Pesquisas Populares",
+      "items": [
+        {
+          "name": "Início",
+          "icon": "ti ti-home",
+          "url": "/home"
+        },
+        {
+          "name": "Conectores",
+          "icon": "ti ti-plug-connected",
+          "url": "/conectores"
+        },
+        {
+          "name": "Produtos",
+          "icon": "ti ti-package",
+          "url": "/produtos"
+        },
+        {
+          "name": "Usuários",
+          "icon": "ti ti-users",
+          "url": "/usuarios"
+        }
+      ]
+    },
+    {
+      "title": "Páginas",
+      "items": [
+        {
+          "name": "Dashboard",
+          "icon": "ti ti-layout-dashboard",
+          "url": "/home"
+        },
+        {
+          "name": "Configurações",
+          "icon": "ti ti-settings",
+          "url": "/configuracoes"
+        },
+        {
+          "name": "Relatórios",
+          "icon": "ti ti-chart-bar",
+          "url": "/relatorios"
+        },
+        {
+          "name": "Logs",
+          "icon": "ti ti-list-details",
+          "url": "/logs"
+        }
+      ]
+    }
+  ]
+}

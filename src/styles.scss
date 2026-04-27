@@ -1,0 +1,170 @@
+@import url('./assets/styles/vendor/core.css');
+@import url('./assets/styles/vendor/theme-default.css');
+@import url('./assets/styles/demo.css');
+@import url('./assets/styles/vendor/datatables.bootstrap5.css');
+@import url('./assets/styles/vendor/responsive.bootstrap5.css');
+
+
+@import '../node_modules/boxicons/css/boxicons';
+@import '../node_modules/egalink-toasty.js/dist/toasty.min.css';
+@import url('./assets/styles/vendor/sweetalert2.css');
+@import url('./assets/styles/vendor/tabler-icons.min.css');
+@import url('./assets/styles/vendor/tabler-icons-filled.min.css');
+@import url('./assets/styles/vendor/tabler-icons-outline.min.css');
+
+@import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
+@import url('./assets/styles/vendor/flatpickr.css');
+
+.toast-container--fade {
+  right: 0;
+  top: 90px !important;
+  z-index: 200002 !important;
+}
+
+input::placeholder {
+  color: #2F2B3D66 !important;
+}
+
+input.table-search {
+  border: none !important;
+}
+
+input.table-search:focus {
+  outline: none;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  justify-content: center !important;
+}
+
+// Remove o campo de pesquisa do datatable bootstrap
+.dt-bootstrap5 .view-filter {
+  display: none !important;
+}
+
+.star {
+  color: red;
+}
+
+.border-dash {
+  border-width: 2px !important;
+  border-style: dashed !important;
+  border-radius: 6px;
+}
+
+.ng-select-focused {
+  border-color: #334DBE !important;
+}
+
+.ng-select-container {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: #697a8d !important;
+  border-color: #d9dee3 !important;
+  border-radius: var(--bs-border-radius) !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+  height: 38px !important;
+  outline-color: #334DBE !important;
+}
+
+.ng-option {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: #697a8d !important;
+}
+
+.swal2-modal.swal2-popup .swal2-title {
+  margin: 0px !important;
+}
+
+
+/* in-flight clone */
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  pointer-events: none;
+}
+
+/* high-performance display:none; helper */
+.gu-hide {
+  left: -9999px !important;
+}
+
+/* added to mirrorContainer (default = body) while dragging */
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* added to the source element while its mirror is dragged */
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+
+.bg-label-brand {
+  background-color: #FFD8CC80;
+  color: #FE3C00;
+}
+
+.progress-bar-brand {
+  background-color: #FE6333;
+}
+
+.text-brand {
+  color: #FE6333;
+}
+
+
+.dropdown-perfil {
+  position: absolute;
+  z-index: 2055 !important;
+  top: 67px;
+  right: 52px;
+}
+
+.flatpickr-calendar.animate.open {
+  width: calc(20.625rem + 0px * 2) !important;
+}
+
+.flatpickr-calendar .flatpickr-days {
+  width: calc(20.625rem + 0px * 2) !important;
+}
+
+.flatpickr-current-month {
+  left: 16.5% !important;
+  padding: 0px !important;
+}
+
+.flatpickr-months .flatpickr-month {
+  height: 56px !important;
+}
+
+.flatpickr-months .flatpickr-prev-month {
+  top: 12px !important;
+  left: 12px !important;
+}
+
+.flatpickr-months .flatpickr-next-month {
+  top: 12px !important;
+  right: 12px !important;
+}
+
+.sticky-actions {
+  position: sticky;
+  top: 6.5rem;
+  z-index: 10;
+}
+
+.x-small {
+  font-size: 0.75rem;
+}

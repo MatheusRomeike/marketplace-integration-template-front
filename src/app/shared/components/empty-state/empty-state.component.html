@@ -1,0 +1,25 @@
+<div class="empty-state py-5 text-center" style="cursor: default;">
+    <!-- Icon Container -->
+    <div class="avatar avatar-xl mx-auto mb-4" style="width: 80px; height: 80px; cursor: default;">
+        <span class="avatar-initial rounded-circle bg-label-primary" style="cursor: default;">
+            <i class="ti fs-1" [ngClass]="icon"></i>
+        </span>
+    </div>
+
+    <!-- Content -->
+    <h5 class="mb-2 text-heading">{{ title }}</h5>
+    <p class="text-muted mx-auto mb-4" style="max-width: 320px;">
+        {{ description }}
+    </p>
+
+    <!-- Optional Action Button -->
+    <ng-container *ngIf="showButton">
+        <button *ngIf="buttonLink" [routerLink]="buttonLink" class="btn btn-primary d-inline-flex align-items-center">
+            <i class="ti me-1" [ngClass]="buttonIcon"></i> {{ buttonText }}
+        </button>
+
+        <button *ngIf="!buttonLink" (click)="onButtonClick()" class="btn btn-primary d-inline-flex align-items-center">
+            <i class="ti me-1" [ngClass]="buttonIcon"></i> {{ buttonText }}
+        </button>
+    </ng-container>
+</div>

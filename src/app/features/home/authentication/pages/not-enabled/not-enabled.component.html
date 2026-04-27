@@ -1,0 +1,50 @@
+<div class="container-xxl container-p-y">
+  <div class="misc-wrapper text-center">
+
+    <div class="card px-3 py-4">
+      <div class="card-body">
+
+        <!-- Icon -->
+        <i class="ti ti-user-x text-warning mb-3" style="font-size: 3.5rem;"></i>
+
+        <!-- Title -->
+        <h4 class="mb-2 fw-semibold">Usuário não habilitado</h4>
+
+        <!-- Alert -->
+        <div class="alert alert-warning d-flex align-items-center justify-content-center mb-3" role="alert">
+          <i class="ti ti-alert-circle me-2"></i>
+          <span class="small">
+            Seu cadastro ainda não foi habilitado para o Integration Template.
+          </span>
+        </div>
+
+        <!-- Description -->
+        <p class="mb-4">
+          Para acessar o sistema, você precisa estar vinculado a uma empresa habilitada.<br>
+          <span class="fw-semibold text-primary">
+            Entre em contato com um administrador Integration.
+          </span>
+        </p>
+
+        <!-- Illustration -->
+        <img src="assets/images/illustrations/access_denied.svg" alt="Não habilitado" class="img-fluid misc-object mb-4"
+          width="280" />
+
+        <!-- Actions -->
+        <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+          <button class="btn btn-primary" (click)="goBack()">
+            <i class="ti ti-refresh me-1"></i>
+            Tentar novamente
+          </button>
+
+          <button class="btn btn-label-secondary" (click)="logout()">
+            <i class="ti ti-logout me-1"></i>
+            Sair
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

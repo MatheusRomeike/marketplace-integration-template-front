@@ -1,0 +1,67 @@
+.banner-wrapper {
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 100%),
+    url('/assets/images/illustrations/auth-banner.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  // glow moderno (efeito SaaS)
+  &::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: -100px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(105, 108, 255, 0.25) 0%, transparent 70%);
+    filter: blur(80px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  }
+}
+
+.banner-header {
+  z-index: 1;
+
+  .logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+
+    // evita ficar estourado no fundo escuro
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+  }
+}
+
+.banner-content {
+  z-index: 1;
+  max-width: 520px;
+
+  h1 {
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-weight: 300;
+  }
+}
+
+.banner-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.banner-footer {
+  z-index: 1;
+}

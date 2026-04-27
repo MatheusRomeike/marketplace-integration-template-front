@@ -1,0 +1,82 @@
+<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+  id="layout-navbar">
+  <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+    <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+      <i class="ti ti-menu-2 ti-sm"></i>
+    </a>
+  </div>
+
+  <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+
+    <!-- Search bar -->
+    <div class="navbar-nav align-items-center">
+      <div class="nav-item navbar-search-wrapper mb-0">
+        <button id="navbar-search-trigger"
+          class="nav-item nav-link search-toggler d-flex align-items-center px-0 border-0 bg-transparent"
+          (click)="openSearch()" aria-label="Abrir busca (CTRL+K)">
+          <i class="ti ti-search ti-sm me-2 text-muted"></i>
+          <span class="text-muted fw-normal">Buscar (CTRL + K)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right icons -->
+    <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+      <li class="nav-item mx-2 d-none d-md-block d-lg-block mt-1">
+        <a href="https://Integration.movidesk.com/kb/" target="_blank">
+          <i class="ti ti-help-circle fs-large cursor-pointer text-muted"></i>
+        </a>
+      </li>
+
+      <!-- User dropdown -->
+      <li class="nav-item navbar-dropdown dropdown-user dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" ngbDropdownToggle>
+          <app-avatar size="avatar-sm" [circle]="true" [nome]="nomeUsuario" [url]="avatarUsuario" [scaleGray]="true"
+            status="online">
+          </app-avatar>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" ngbDropdownMenu>
+          <li>
+            <a class="dropdown-item mt-0" href="javascript:void(0);">
+              <div class="d-flex align-items-center">
+                <div class="flex-shrink-0 me-2">
+                  <app-avatar size="avatar-md" [circle]="true" [nome]="nomeUsuario" [url]="avatarUsuario"
+                    [scaleGray]="true" status="online">
+                  </app-avatar>
+                </div>
+                <div class="flex-grow-1">
+                  <h6 class="mb-0">{{ nomeUsuario }}</h6>
+                  <small class="text-muted">Usuário</small>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <div class="dropdown-divider my-1"></div>
+          </li>
+          <li>
+            <button class="dropdown-item" [routerLink]="['/usuario']" ngbDropdownItem>
+              <i class="ti ti-user-check ti-sm me-2"></i>
+              <span class="align-middle">Meu perfil</span>
+            </button>
+          </li>
+          <li>
+            <div class="dropdown-divider my-1"></div>
+          </li>
+          <li>
+            <button class="dropdown-item" (click)="sair()" ngbDropdownItem>
+              <i class="ti ti-logout ti-sm me-2"></i>
+              <span class="align-middle">Sair</span>
+            </button>
+          </li>
+        </ul>
+      </li>
+      <!-- End user dropdown -->
+
+    </ul>
+  </div>
+</nav>
+
+<!-- Search modal -->
+<app-navbar-search />

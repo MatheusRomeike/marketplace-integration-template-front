@@ -1,0 +1,46 @@
+<ng-template #searchModal>
+  <!-- Search Header -->
+  <div class="modal-header d-flex align-items-center gap-2 border-bottom p-3">
+    <i class="ti ti-search ti-md text-secondary fw-bold"></i>
+    <input type="text" class="form-control border-0 shadow-none p-0 flex-grow-1" placeholder="Buscar [CTRL + K]"
+      autocomplete="off" autofocus [(ngModel)]="query" (ngModelChange)="onQueryChange()" />
+    <div class="d-flex align-items-center">
+      <span class="text-muted fw-normal d-none d-sm-block py-1 me-2">[esc]</span>
+      <i class="ti ti-x ti-sm cursor-pointer close-icon fw-bold" (click)="close()"></i>
+    </div>
+
+
+  </div>
+
+  <!-- Search Body -->
+  <div class="modal-body p-4 pt-0" style="min-height: 350px">
+    @if (filteredSections.length > 0) {
+    <div class="row pt-4 scroll-container">
+      @for (section of filteredSections; track section.title) {
+      <div class="col-md-6 mb-4">
+        <h6 class="section-title mb-3">{{ section.title }}</h6>
+        <div class="d-flex flex-column">
+          @for (item of section.items; track item.url) {
+          <button class="search-item d-flex align-items-center rounded-2 px-3 py-2 border-0 bg-transparent"
+            (click)="navigate(item.url)">
+            <i [class]="item.icon + ' ti-sm me-3 search-item-icon'"></i>
+            <span class="item-name">{{ item.title }}</span>
+
+          </button>
+          }
+        </div>
+      </div>
+      }
+    </div>
+    }
+
+    <!-- Empty State -->
+    @if (noResults) {
+    <div class="empty-state py-5 text-center">
+      <i class="ti ti-file-search mb-3 opacity-25" style="font-size: 3.5rem;"></i>
+      <h5 class="mb-1">Nenhum resultado encontrado</h5>
+      <p class="text-muted">Não encontramos nada para "{{ query }}"</p>
+    </div>
+    }
+  </div>
+</ng-template>

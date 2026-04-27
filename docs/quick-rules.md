@@ -1,0 +1,50 @@
+# Quick Rules
+
+- Use standalone Angular components.
+- Put new business features under `src/app/features/<feature>`.
+- Use `models`, `pages`, and `services` inside each feature folder.
+- Put reusable UI and utilities under `src/app/shared`.
+- Put shell, config, interceptors, and base infrastructure under `src/app/core`.
+- Register protected feature routes in `src/app/app.routes.ts` under `MasterPageComponent`.
+- Use `loadComponent` for routed feature pages.
+- Use Portuguese URL segments for business routes.
+- Update `NAVIGATION_CONFIG` for menu and searchable routes.
+- Use `KEYCLOAK_ROLES` constants for role names.
+- Do not inline Keycloak role strings in components.
+- Use `canActivateAuthRole` for protected shell children.
+- Use `PageHeaderComponent` for page titles, breadcrumbs, and primary actions.
+- Keep screen text in Portuguese.
+- Use `FormSidebarComponent` for standard form actions, tips, and metadata.
+- Use `*appLoadingCard="isLoading"` for full-card loading states.
+- Use `EmptyStateComponent` for empty list states.
+- Use `AvatarComponent` for company, group, user, or provider identity display.
+- Use Reactive Forms for feature forms.
+- Use tabs for large forms when sections are distinct enough to improve scanning.
+- Use `ngbNav` with `[destroyOnHide]="false"` for tabbed Reactive Forms.
+- Build forms in the component constructor.
+- Validate submits with `form.invalid` and `form.markAllAsTouched()`.
+- Use `patchValue` when loading edit data.
+- Use `getRawValue()` when disabled fields must be submitted.
+- Extend `BaseComponent` when a component needs `isLoading`, subscription cleanup, or tenant context.
+- Add long-lived subscriptions to `this.subscriptions`.
+- Keep page-local state in component fields.
+- Use `StateService.tenant$` for selected company context.
+- Require selected tenant context before calling tenant-scoped APIs.
+- Create one feature API service per backend feature.
+- Feature API services must extend `BaseService`.
+- Use `BaseService` HTTP helpers for backend calls.
+- Do not build API URLs in components.
+- Prefer service methods named `list`, `getById`, `create`, `update`, and `remove`.
+- Use explicit domain verbs for non-CRUD operations.
+- Let `BaseService` handle standard API error notifications.
+- Use `NotifyService.confirmation` before destructive actions.
+- Use `NotifyService.success` after successful create, update, delete, or authorization.
+- Use `NotifyService.warning` for user-action validation not captured by form validators.
+- Use existing theme classes before creating new styles.
+- Use Bootstrap markup and theme classes as the design system baseline.
+- Use existing icon class patterns before adding new icon systems.
+- Wrap imperative third-party behavior in shared services or factories.
+- Do not add new direct jQuery, `window`, or `document` usage in feature components.
+- Do not introduce NgRx or another state library without an architecture decision.
+- Do not invent product, order, inventory, or marketplace patterns that are not present yet.
+- Document inconsistencies when extending an inconsistent area.

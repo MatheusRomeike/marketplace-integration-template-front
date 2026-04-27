@@ -1,0 +1,28 @@
+.menu-section-header {
+  margin: 0.35rem 0 0.2rem;
+  padding-bottom: 0.35rem;
+  padding-top: 0.45rem;
+}
+
+.menu-section-header-spaced {
+  border-top: 1px solid rgba(67, 89, 113, 0.12);
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+}
+
+.menu-section-icon {
+  color: var(--bs-primary);
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.menu-section-title {
+  letter-spacing: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:host ::ng-deep .layout-menu-collapsed:not(.layout-menu-hover) .menu-section-icon {
+  display: none;
+}
